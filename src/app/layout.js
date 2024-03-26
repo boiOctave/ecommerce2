@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
-
+import '../responsive.css';
+import Header from '@/components/header/header';
+import ThemeProvider from '@/context/ThemeProvider';
 
 export const metadata = {
   title: "Create Next App",
@@ -10,7 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+    <body>
+    <ThemeProvider>
+    <Header/>
+    {children}
+    </ThemeProvider>
+      </body>
     </html>
   );
 }
