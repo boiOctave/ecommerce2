@@ -17,17 +17,17 @@ const ThemeProvider = ({ children }) => {
 
 
   useEffect(() => {
-    // getData('http://localhost:5000/productData');
-    // getCartData("http://localhost:5000/cartItems");
+    getData('http://localhost:5000/productData');
+    getCartData("http://localhost:5000/cartItems");
 
     const is_Login = localStorage.getItem('isLogin');
     setIsLogin(is_Login);
 
    
-      setTimeout(() => {
-        setProductData(data[1]);
-        setIsloading(false);
-      }, 3000);
+    //   setTimeout(() => {
+    //     setProductData(data[1]);
+    //     setIsloading(false);
+    //   }, 3000);
 
 
   
@@ -108,6 +108,7 @@ const ThemeProvider = ({ children }) => {
 
 
     const value = {
+        productData,
         cartItems,
         isLogin,
         windowWidth,

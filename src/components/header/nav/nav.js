@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import './nav.css';
-import { Link } from 'next/link';
+import Link from 'next/link';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import GridViewIcon from '@mui/icons-material/GridView';
@@ -56,7 +56,7 @@ const Nav = (props) => {
                             <nav className={isOpenNav === true ? 'open' : ''}>
                                 <ul className='list list-inline mb-0'>
                                     <li className='list-inline-item'>
-                                        <Button><Link to={'/'} onClick={props.closeNav}>Home</Link></Button>
+                                        <Button><Link href={'/'} onClick={props.closeNav}>Home</Link></Button>
                                     </li>
                                     
                                     {
@@ -100,12 +100,12 @@ const Nav = (props) => {
                                     }
 
                                     <li className='list-inline-item'>
-                                        <Button onClick={props.closeNav}><Link>About</Link></Button>
+                                        <Button onClick={props.closeNav}><Link href="#">About</Link></Button>
                                     </li>
 
 
                                     <li className='list-inline-item position-static'>
-                                        <Button onClick={()=>setOpenMegaMenu(!openMegaMenu)}><Link>Shop <KeyboardArrowDownIcon   className={`${openMegaMenu===true &&  'rotateIcon'}`}/></Link></Button>
+                                        <Button onClick={()=>setOpenMegaMenu(!openMegaMenu)}><Link href="#">Shop <KeyboardArrowDownIcon   className={`${openMegaMenu===true &&  'rotateIcon'}`}/></Link></Button>
                                         <div className={`dropdown_menu megaMenu w-100 ${openMegaMenu===true && 'open'}`}>
                                             <div className='row'>
                                                 {
@@ -121,7 +121,7 @@ const Nav = (props) => {
                                                                             item.items.map((item_, index) => {
                                                                                 return (
                                                                                     <li>
-                                                                                        <Link onClick={props.closeNav} to={`/cat/${item.cat_name.toLowerCase()}/${item_.cat_name.replace(/\s/g, '-').toLowerCase()}`}>{item_.cat_name}</Link>
+                                                                                        <Link onClick={props.closeNav} href={`/cat/${item.cat_name.toLowerCase()}/${item_.cat_name.replace(/\s/g, '-').toLowerCase()}`}>{item_.cat_name}</Link>
                                                                                     </li>
                                                                                 )
                                                                             })
@@ -140,7 +140,7 @@ const Nav = (props) => {
                                         </div>
                                     </li>
                                     <li className='list-inline-item'>
-                                        <Button><Link>Blog</Link></Button>
+                                        <Button><Link href="#">Blog</Link></Button>
                                     </li>
                                     {/* <li className='list-inline-item'>
                                         <Button><Link>Pages  <KeyboardArrowDownIcon /></Link>
@@ -148,23 +148,23 @@ const Nav = (props) => {
 
                                         <div className='dropdown_menu'>
                                             <ul>
-                                                <li><Button><Link to="/about">About Us</Link></Button></li>
-                                                <li><Button><Link to="/about">Contact</Link></Button></li>
-                                                <li><Button><Link to="/about">My Account</Link></Button></li>
-                                                <li><Button><Link to="/about">Login</Link></Button></li>
-                                                <li><Button><Link to="/about">Register</Link></Button></li>
-                                                <li><Button><Link to="/about">Forgot password</Link></Button></li>
-                                                <li><Button><Link to="/about">Reset password</Link></Button></li>
-                                                <li><Button><Link to="/about">Purchase Guide</Link></Button></li>
-                                                <li><Button><Link to="/about">Privacy Policy</Link></Button></li>
-                                                <li><Button><Link to="/about">Terms of Service</Link></Button></li>
-                                                <li><Button><Link to="/about">404 Page</Link></Button></li>
+                                                <li><Button><Link href="/about">About Us</Link></Button></li>
+                                                <li><Button><Link href="/about">Contact</Link></Button></li>
+                                                <li><Button><Link href="/about">My Account</Link></Button></li>
+                                                <li><Button><Link href="/about">Login</Link></Button></li>
+                                                <li><Button><Link href="/about">Register</Link></Button></li>
+                                                <li><Button><Link href="/about">Forgot password</Link></Button></li>
+                                                <li><Button><Link href="/about">Reset password</Link></Button></li>
+                                                <li><Button><Link href="/about">Purchase Guide</Link></Button></li>
+                                                <li><Button><Link href="/about">Privacy Policy</Link></Button></li>
+                                                <li><Button><Link href="/about">Terms of Service</Link></Button></li>
+                                                <li><Button><Link href="/about">404 Page</Link></Button></li>
                                             </ul>
                                         </div>
 
                                     </li> */}
                                     <li className='list-inline-item'>
-                                        <Button><Link>Contact</Link></Button>
+                                        <Button><Link href="#">Contact</Link></Button>
                                     </li>
                                 </ul>
 
@@ -175,7 +175,7 @@ const Nav = (props) => {
                                         context.isLogin!=="true" &&
                                          <div className='pl-3 pr-3'>
                                             <br />
-                                            <Link to={'/signIn'}>
+                                            <Link href={'/signIn'}>
                                                 <Button className="btn btn-g btn-lg w-100" onClick={closeNav}>Sign In</Button>
                                             </Link>
                                         </div>
